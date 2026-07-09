@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-primary font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-primary text-white;
+  }
+}
+
+@layer components {
+  .container-section {
+    @apply max-w-7xl mx-auto px-6 lg:px-8;
+  }
+
+  .heading-xl {
+    @apply text-display-xl font-semibold tracking-tight;
+  }
+
+  .heading-lg {
+    @apply text-display-lg font-semibold tracking-tight;
+  }
+
+  .heading-md {
+    @apply text-display-md font-semibold tracking-tight;
+  }
+
+  .heading-sm {
+    @apply text-display-sm font-semibold tracking-tight;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-medium rounded-2xl
+           transition-all duration-300 ease-premium hover:bg-gray-800 hover:shadow-soft-lg active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-transparent text-primary font-medium rounded-2xl
+           border-2 border-primary/20 transition-all duration-300 ease-premium
+           hover:border-primary hover:bg-primary/5;
+  }
+
+  .card-base {
+    @apply bg-white rounded-3xl shadow-soft overflow-hidden transition-all duration-500 ease-premium;
+  }
+
+  .card-hover {
+    @apply hover:shadow-soft-lg hover:-translate-y-1;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary via-gray-700 to-primary bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl;
+  }
+
+  .glass-dark {
+    @apply bg-primary/80 backdrop-blur-xl;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/50;
+}
+
+/* Image zoom effect */
+.img-zoom {
+  @apply transition-transform duration-700 ease-premium;
+}
+
+.img-zoom:hover {
+  @apply scale-110;
+}
